@@ -105,6 +105,7 @@ class SolverBase : public EigenBase<Derived>
     inline const Solve<Derived, Rhs>
     solve(const MatrixBase<Rhs>& b) const
     {
+      //std::cout << "SolverBase 108" << std::endl;
       internal::solve_assertion<typename internal::remove_all<Derived>::type>::template run<false>(derived(), b);
       return Solve<Derived, Rhs>(derived(), b.derived());
     }

@@ -213,6 +213,7 @@ class SimplicialCholeskyBase : public SparseSolverBase<Derived>
     template<bool DoLDLT>
     void factorize(const MatrixType& a)
     {
+      std::cout << "[FACTORIZE]" << std::endl;
       eigen_assert(a.rows()==a.cols());
       Index size = a.cols();
       CholMatrixType tmp(size,size);
@@ -596,6 +597,7 @@ public:
     template<typename Rhs,typename Dest>
     void _solve_impl(const MatrixBase<Rhs> &b, MatrixBase<Dest> &dest) const
     {
+      std::cout << "__solve_impl" << std::endl;
       eigen_assert(Base::m_factorizationIsOk && "The decomposition is not in a valid state for solving, you must first call either compute() or symbolic()/numeric()");
       eigen_assert(Base::m_matrix.rows()==b.rows());
 

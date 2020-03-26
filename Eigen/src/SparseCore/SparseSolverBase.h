@@ -87,6 +87,7 @@ class SparseSolverBase : internal::noncopyable
     inline const Solve<Derived, Rhs>
     solve(const MatrixBase<Rhs>& b) const
     {
+      std::cout << "SparseSolverBase 90" << std::endl;
       eigen_assert(m_isInitialized && "Solver is not initialized.");
       eigen_assert(derived().rows()==b.rows() && "solve(): invalid number of rows of the right hand side matrix b");
       return Solve<Derived, Rhs>(derived(), b.derived());
@@ -100,6 +101,7 @@ class SparseSolverBase : internal::noncopyable
     inline const Solve<Derived, Rhs>
     solve(const SparseMatrixBase<Rhs>& b) const
     {
+      std::cout << "SparseSolverBase 104" << std::endl;
       eigen_assert(m_isInitialized && "Solver is not initialized.");
       eigen_assert(derived().rows()==b.rows() && "solve(): invalid number of rows of the right hand side matrix b");
       return Solve<Derived, Rhs>(derived(), b.derived());

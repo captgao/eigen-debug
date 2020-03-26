@@ -282,7 +282,10 @@ template<typename _MatrixType, unsigned int _Mode> class TriangularView
     EIGEN_DEVICE_FUNC
     inline const Solve<TriangularView, Other> 
     solve(const MatrixBase<Other>& other) const
-    { return Solve<TriangularView, Other>(*this, other.derived()); }
+    {
+       //std::cout << "Triangle 286" << std::endl;
+       return Solve<TriangularView, Other>(*this, other.derived()); 
+    }
     
   // workaround MSVC ICE
   #if EIGEN_COMP_MSVC

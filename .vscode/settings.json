@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.traits": "cpp",
+        "alignedvector3": "cpp",
+        "fft": "cpp",
+        "matrixfunctions": "cpp",
+        "nonlinearoptimization": "cpp",
+        "openglsupport": "cpp"
+    }
+}

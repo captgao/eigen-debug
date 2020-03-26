@@ -245,6 +245,7 @@ class SparseQR : public SparseSolverBase<SparseQR<_MatrixType,_OrderingType> >
     template<typename Rhs>
     inline const Solve<SparseQR, Rhs> solve(const MatrixBase<Rhs>& B) const 
     {
+      std::cout << "SparseQR 248" << std::endl;
       eigen_assert(m_isInitialized && "The factorization should be called first, use compute()");
       eigen_assert(this->rows() == B.rows() && "SparseQR::solve() : invalid number of rows in the right hand side matrix");
       return Solve<SparseQR, Rhs>(*this, B.derived());
@@ -252,6 +253,7 @@ class SparseQR : public SparseSolverBase<SparseQR<_MatrixType,_OrderingType> >
     template<typename Rhs>
     inline const Solve<SparseQR, Rhs> solve(const SparseMatrixBase<Rhs>& B) const
     {
+          std::cout << "SparseQR 256" << std::endl;
           eigen_assert(m_isInitialized && "The factorization should be called first, use compute()");
           eigen_assert(this->rows() == B.rows() && "SparseQR::solve() : invalid number of rows in the right hand side matrix");
           return Solve<SparseQR, Rhs>(*this, B.derived());
