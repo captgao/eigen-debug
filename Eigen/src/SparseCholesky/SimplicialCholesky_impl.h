@@ -77,7 +77,7 @@ void SimplicialCholeskyBase<Derived>::factorize_preordered(const CholMatrixType&
 {
   using std::sqrt;
   //std::cout  << ap.rows() << "  " << ap.cols() << "  " << ap.nonZeros() << std::endl;
-  std::cout << ap << std::endl;
+ // std::cout << m_matrix << std::endl<< std::endl<< std::endl<< std::endl<< std::endl;
   eigen_assert(m_analysisIsOk && "You must first call analyzePattern()");
   eigen_assert(ap.rows()==ap.cols());
   eigen_assert(m_parent.size()==ap.rows());
@@ -168,6 +168,10 @@ void SimplicialCholeskyBase<Derived>::factorize_preordered(const CholMatrixType&
 
   m_info = ok ? Success : NumericalIssue;
   m_factorizationIsOk = true;
+  std::cout << ap << std::endl<< std::endl<< std::endl<< std::endl<< std::endl<< std::endl;
+  std::cout << m_matrix << std::endl << std::endl << std::endl;
+  std::cout << m_diag << std::endl;
+  std::exit(0);
 }
 
 } // end namespace Eigen
